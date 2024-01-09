@@ -94,13 +94,13 @@ export async function POST(req: Request) {
     return NextResponse.json({ message: 'OK', user: updatedUser });
   }
 
-  if (eventType === 'user.deleted') {
-    const { id } = evt.data;
+  //   if (eventType === 'user.deleted') {
+  //     const { id } = evt.data;
 
-    const deletedUser = await delete User(id!);
+  //     const deletedUser = await deleteUser(id!);
 
-    return NextResponse.json({ message: 'OK', user: deletedUser });
-  }
+  //     return NextResponse.json({ message: 'OK', user: deletedUser });
+  //   }
 
-  return new Response('', { status: 200 });
+  //   return new Response('', { status: 200 });
 }
