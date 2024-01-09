@@ -1,19 +1,9 @@
 'use server';
 
-import { UpdateUserParams } from '@/types';
+import { CreateUserParams } from '@/types';
 import { connectToDatabase } from '../database';
 import User from '../models/user.model';
 import { handleError } from '../utils';
-import { revalidatePath } from 'next/cache';
-
-type CreateUserParams = {
-  clerkId: string;
-  firstName: string;
-  lastName: string;
-  username: string;
-  email: string;
-  photo: string;
-};
 
 export const createUser = async (user: CreateUserParams) => {
   try {
