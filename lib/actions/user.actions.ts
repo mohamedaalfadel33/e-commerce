@@ -9,9 +9,8 @@ import { revalidatePath } from 'next/cache';
 export const createUser = async (user: CreateUserParams) => {
   try {
     await connectToDatabase();
-    console.log('connect successfully');
     const newUser = await User.create(user);
-
+    console.log('connect successfully');
     return JSON.parse(JSON.stringify(newUser));
   } catch (error) {
     handleError(error);
